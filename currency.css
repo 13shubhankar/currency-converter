@@ -1,110 +1,170 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
 }
-body{
-    background-color: #EEE5E9;
-    font-family: Arial, sans-serif;
+
+/* Body Styling */
+body {
+  background: linear-gradient(135deg, #52dee5, #8e9efc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+  padding: 20px;
 }
-.container{
-    width: 50vh;
-    height: 50vh;
-    margin-top: 20vh;
-    margin-left: auto;
-    margin-right: auto;
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 600px; /* bigger size for desktop */
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+/* Title */
+h2 {
+  margin-bottom: 20px;
+  color: #444;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Amount Input */
+.amount {
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #52dee5;
+  border-radius: 10px;
+  font-size: 18px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #8e9efc;
+  box-shadow: 0 0 8px rgba(82, 222, 229, 0.5);
+}
+
+/* Dropdowns */
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0;
+  gap: 20px;
+  flex-wrap: wrap; /* so on mobile it stacks */
+}
+
+.select_container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9ff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #52dee5;
+  flex: 1;
+  min-width: 200px; /* ensures not too small */
+}
+
+.select_container img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+}
+
+select {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 18px;
+  color: #444;
+  cursor: pointer;
+}
+
+/* Swap Icon */
+i {
+  font-size: 28px;
+  color: #52dee5;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+i:hover {
+  transform: rotate(180deg);
+  color: #8e9efc;
+}
+
+/* Result Message */
+.msg {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  margin: 25px 0;
+  min-height: 24px; /* keeps space even before text loads */
+}
+
+/* Button */
+#button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #52dee5, #8e9efc);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#button:hover {
+  background: linear-gradient(135deg, #8e9efc, #52dee5);
+  transform: scale(1.05);
+}
+
+#button:active {
+  transform: scale(0.98);
+}
+
+/* ✅ Responsive */
+@media (max-width: 600px) {
+  .container {
     padding: 20px;
-    background-color: #FFFFFF;
-    box-shadow: 0 0 10px #52DEE5;
-    border-radius: 10px;
-}
-h2{
-    text-align: center;
-    color: #333333;
-}
-.amount{
-    margin-top: 20px;
-    text-align:left;
-    font-size: 15px;
-    color: #52DEE5;
-}
-input{
-    width: 45vh;
-    padding: 10px;
-    margin-top: 0px;
-    border: 1px solid #52DEE5;
-    border-radius: 5px;
-    font-size: 16px;
-}
-.select_container{
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-.dropdown{
-    display: flex;
-    margin-top: 60px;
-    justify-content: center;
-    align-items: center;
-    
-}
-select{
- 
-    border: 1px solid #52DEE5;
-    border-radius: 10px;
-    font-size: 16px;
-    margin-right: 10px;
-    background-color: #FFFFFF;
-    color: #52DEE5;
-    cursor: pointer;
-    
-}
+    max-width: 100%;
+  }
+  
+  h2 {
+    font-size: 22px;
+  }
 
-i{
-    color: #52DEE5;
-    font-size: 20px;
-    margin-right: 10px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    margin-top: 20px;
-}
-.from{
-    width: 45vh;
-    padding: 10px;
-    border: 1px solid #52DEE5;
-    border-radius: 5px;
+  input, select, #button {
     font-size: 16px;
-    margin-right: 10px;
-}
-.to{
-    width: 45vh;
-    padding: 10px;
-    border: 1px solid #52DEE5;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-right: 5px;
-}
+    padding: 12px;
+  }
 
-
-
-
-.msg{
-    text-align: center;
-    color:cadetblue;
-    font-size: 20px;
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
-#button{
-    width: 45vh;
-    padding: 10px;
-    background-color: #52DEE5;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 0px;
-    margin-left: 20px;
+  .select_container img {
+    width: 32px;
+    height: 32px;
+  }
 }
